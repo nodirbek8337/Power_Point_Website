@@ -1,0 +1,39 @@
+/* about-container */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 100px;
+}
+
+.about-title-content{
+    width: 500px;
+}
+
+.about-theme {
+  font-size: 40px;
+  color: rgb(197, 28, 28);
+  padding-bottom: 20px;
+}
+
+.about-title{
+padding-bottom: 20px;
+}
+
+.about-images{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 30px;
+}
+
+.about-image-content{
+    width: 200px;
+}
+
+.about-image-content img{
+    width: 100%;
+    border-radius: 10px;
+}

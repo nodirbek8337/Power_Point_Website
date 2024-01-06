@@ -1,0 +1,16 @@
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #272626;
+}
+
+.copyright-title {
+  font-size: 18px;
+  color: #dfdfdf;
+}
+
+.copyright-title span {
+  color: rgb(197, 28, 28);
+}

@@ -1,0 +1,23 @@
+<nav class="nav-content">
+  <div class="navbar-content">
+    <div class="logo-content">
+      <a routerLink="" class="logo-title">Nodirbek<span>Group</span></a>
+    </div>
+    <div class="menu-links-content">
+      <a routerLink="" class="link-content">Asosiy</a>
+      <a routerLink="menu" class="link-content">Video darslar</a>
+      <a routerLink="about" class="link-content">Men haqimda</a>
+      <div class="dropdown" *ngIf="isAuth">
+        <button class="dropbtn">{{ user.username }}</button>
+        <div class="dropdown-content">
+          <a>Profile</a>
+          <a>Orders</a>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </div>
+      <a routerLink="login" *ngIf="!isAuth" class="link-content"
+        >Tizimga kirish</a
+      >
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,14 @@
+<div class="menu-container">
+  <div class="lessons-content">
+    <div *ngFor="let date of videoDates" class="lesson-content">
+      <a routerLink="/menu/{{ date.id }}">
+        <div class="img-content">
+          <img src="{{ date.imgUrl }}" />
+        </div>
+        <p class="lesson-title">
+          {{ date.videoName }}
+        </p>
+      </a>
+    </div>
+  </div>
+</div>

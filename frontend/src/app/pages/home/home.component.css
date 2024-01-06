@@ -1,0 +1,59 @@
+/* sayHi-container */
+.sayHi-container {
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+}
+
+.sayHi-title-content {
+  padding-top: 40px;
+}
+
+.sayHi-container .sayHi-title {
+  font-size: 28px;
+  text-align: center;
+}
+
+.sayHi-container .sayHi-desc {
+  font-size: 20px;
+  text-align: center;
+}
+
+.sayHi-container .sayHi-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
+  padding: 20px 0;
+}
+
+.sayHi-container .sayHi-links .sayHi-link {
+  font-size: 18px;
+  color: #dfdfdf;
+}
+
+.sayHi-container .sayHi-links .sayHi-link-about {
+  border-radius: 10px;
+  border: 2px solid #dfdfdf;
+  padding: 10px 20px;
+  transition: 0.5s;
+}
+
+.sayHi-container .sayHi-links .sayHi-link-about:hover {
+  color: rgb(197, 28, 28);
+  border: 2px solid rgb(197, 28, 28);
+}
+
+.sayHi-container .sayHi-links .sayHi-link-menu {
+  background-color: #272626;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: rgb(197, 28, 28);
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.sayHi-container .sayHi-links .sayHi-link-menu:hover {
+  color: #dfdfdf;
+  background-color: #333232;
+}

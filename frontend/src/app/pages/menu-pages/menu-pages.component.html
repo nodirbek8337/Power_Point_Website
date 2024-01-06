@@ -1,0 +1,42 @@
+<div class="menu-pages-container">
+  <div class="menu-pages-header">
+    <div class="menu-page-content">
+      <div class="menu-btns-content">
+        <div *ngFor="let date of videoDates" class="menu-btn-content">
+          <a routerLink="/menu/{{ date.id }}">{{ date.videoName }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="video-content">
+      <p class="video-title">{{ video.videoName }}</p>
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/a8JTRW3yZzA?si=7B6vFocEyeH1HOnp"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+  <div class="menu-main-content">
+    <p class="video-desc">
+      {{ video.videoDesc }}
+    </p>
+    <div class="video-images">
+      <div class="img-content">
+        <img src="{{ video.tutorialImg1 }}">
+      </div>
+      <div class="img-content">
+        <img src="{{ video.tutorialImg2 }}">
+      </div>
+      <div class="img-content">
+        <img src="{{ video.tutorialImg3 }}">
+      </div>
+    </div>
+    <p class="img-desc">
+      {{ video.tutorialImgDesc }}
+    </p>
+  </div>
+</div>

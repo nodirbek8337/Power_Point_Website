@@ -1,0 +1,44 @@
+<div class="login-container">
+  <div class="login-content">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <p class="login-title">Tizimga kirish</p>
+      <div class="input-container">
+        <div class="input-content">
+          <input
+            formControlName="username"
+            type="text"
+            id="username"
+            placeholder="Username"
+          />
+          <label for="username"><i class="fa-solid fa-user"></i></label>
+        </div>
+        <div class="error-list" *ngIf="fc['username'].errors && isSubmitted">
+          <div *ngIf="fc['username'].errors['required']">
+            Username bo'sh bo'lmasligi kerak
+          </div>
+          <div *ngIf="fc['username'].errors['username']">
+            Username noto'g'ri
+          </div>
+        </div>
+      </div>
+      <div class="input-container">
+        <div class="input-content">
+          <input
+            formControlName="password"
+            type="password"
+            id="password"
+            placeholder="Password"
+          />
+          <label for="password"><i class="fa-solid fa-lock"></i></label>
+        </div>
+        <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+          <div *ngIf="fc['password'].errors['required']">
+            Password bo'sh bo'lmasligi kerak
+          </div>
+        </div>
+      </div>
+
+      <button class="loginBtn" type="submit">Tizimga kirish</button>
+    </form>
+  </div>
+</div>
