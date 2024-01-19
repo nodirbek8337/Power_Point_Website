@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/model/user';
 import { UserService } from 'src/app/services/user.service';
+import { VideoService } from 'src/app/services/video.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,19 +8,18 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  user!: User;
+  user: any;
+
   constructor(private userService: UserService) {
-    userService.userObservable.subscribe((newUser) => {
-      this.user = newUser;
-    });
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      this.user = JSON.parse(userString);
+    }
   }
+
   ngOnInit(): void {}
 
   logout() {
     this.userService.logout();
-  }
-
-  get isAuth() {
-    return this.user.token;
   }
 }

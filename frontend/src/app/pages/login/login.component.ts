@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 
@@ -9,39 +9,17 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
-  isSubmitted = false;
-  returnUrl = '';
-  constructor(
-    private formBuilder: FormBuilder,
-    private userService: UserService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
-  ) {}
-  ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-    });
+  constructor(private userService: UserService, private router: Router) {}
+  ngOnInit(): void {}
 
-    this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'];
-  }
-
-  get fc() {
-    return this.loginForm.controls;
-  }
-
-  submit() {
-    this.isSubmitted = true;
-    if (this.loginForm.invalid) return;
-
-    this.userService
-      .login({
-        username: this.fc['username'].value,
-        password: this.fc['password'].value,
-      })
-      .subscribe(() => {
-        this.router.navigateByUrl(this.returnUrl);
-      });
+  login(form: NgForm) {
+    if (form.value.username === 'admin' && form.value.password === '12345') {
+      this.userService.login();
+      setTimeout(() => {
+        this.router.navigate(['/menu']);
+      }, 1000);
+    } else {
+      alert('Login xato');
+    }
   }
 }

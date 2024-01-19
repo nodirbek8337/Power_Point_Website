@@ -1,42 +1,82 @@
 <div class="menu-pages-container">
-  <div class="menu-pages-header">
-    <div class="menu-page-content">
-      <div class="menu-btns-content">
-        <div *ngFor="let date of videoDates" class="menu-btn-content">
-          <a routerLink="/menu/{{ date.id }}">{{ date.videoName }}</a>
-        </div>
-      </div>
-    </div>
-    <div class="video-content">
-      <p class="video-title">{{ video.videoName }}</p>
+  <div class="video-contents">
+    <div class="main-video">
       <iframe
         width="560"
         height="315"
-        src="https://www.youtube.com/embed/a8JTRW3yZzA?si=7B6vFocEyeH1HOnp"
+        [src]="video.videoUrl | safe"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
+      <div class="menu-main-content">
+        <p class="video-desc">
+          {{ video.description }}
+        </p>
+      </div>
+      <div class="test-container">
+        <p class="test-title">Mavzu bo'yicha test.</p>
+        <form>
+          <p>1.Yangi slayd qo'shish uchun qaysi tugmani bosiladi?</p>
+            <input type="radio" id="test1-a" name="test1" value="test1-a" />  
+          <label for="test1-a">a) Insert</label><br />
+            <input type="radio" id="test1-b" name="test1" value="test1-b" />  
+          <label for="test1-b">b) Home</label><br />
+           
+          <input type="radio" id="javascript" name="test1" value="test1" />
+            <label for="test1-c">c) Design</label>
+          <p>
+            2.Savol: Animatsiya qo'shish uchun qaysi bo'limdan foydalaniladi?
+          </p>
+          <input type="radio" id="test2-a" name="test2" value="test2-a" />
+          <label for="test2-a">a) Transitions</label><br />
+          <input type="radio" id="test2-b" name="test2" value="test2-b" />
+          <label for="test2-b">b) Slides</label><br />
+          <input type="radio" id="test2-c" name="test2" value="test2-c" />
+          <label for="test2-c">d) Animations</label><br /><br />
+          <p>3.Savol: Master Slide nima uchun foydalaniladi?</p>
+          <input type="radio" id="test3-a" name="test3" value="test3-a" />
+          <label for="test2-a"
+            >a) Slaydlar orasidagi o'tish davrini belgilash</label
+          ><br />
+          <input type="radio" id="test3-b" name="test3" value="test3-b" />
+          <label for="test3-b">b) Transitsiyalarni tanlash</label><br />
+          <input type="radio" id="test3-c" name="test3" value="test3-c" />
+          <label for="test3-c">d) Animatsiyalarni sozlash</label><br /><br />
+          <p>
+            4.Savol: Prezentatsiyani saqlash uchun qaysi bo'limdan
+            foydalaniladi?
+          </p>
+          <input type="radio" id="test4-a" name="test4" value="test4-a" />
+          <label for="test4-a">a) Save As</label><br />
+          <input type="radio" id="test4-b" name="test4" value="test4-b" />
+          <label for="test4-b">b) Export</label><br />
+          <input type="radio" id="test4-c" name="test4" value="test4-c" />
+          <label for="test4-c">d) Print</label><br /><br />
+          <p>
+            5.Savol: Tranzitsiyalarni sozlash uchun qaysi bo'limdan
+            foydalaniladi?
+          </p>
+          <input type="radio" id="test5-a" name="test5" value="test5-a" />
+          <label for="test5-a">a) Design</label><br />
+          <input type="radio" id="test5-b" name="test5" value="test5-b" />
+          <label for="test5-b">b) Animations</label><br />
+          <input type="radio" id="test5-c" name="test5" value="test5-c" />
+          <label for="test5-c">d) Transitions</label><br /><br />
+          <input type="button" class="test-submit-btn" value="Yuborish" />
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="menu-main-content">
-    <p class="video-desc">
-      {{ video.videoDesc }}
-    </p>
-    <div class="video-images">
-      <div class="img-content">
-        <img src="{{ video.tutorialImg1 }}">
-      </div>
-      <div class="img-content">
-        <img src="{{ video.tutorialImg2 }}">
-      </div>
-      <div class="img-content">
-        <img src="{{ video.tutorialImg3 }}">
+    <div class="main-video-contents">
+      <div class="img-content" *ngFor="let vd of videos">
+        <a routerLink="/menu/{{ vd.id }}">
+          <img src="{{ vd.imgUrl }}" />
+          <p>
+            {{ vd.name }}
+          </p>
+        </a>
       </div>
     </div>
-    <p class="img-desc">
-      {{ video.tutorialImgDesc }}
-    </p>
   </div>
 </div>

@@ -1,8 +1,9 @@
 /* sayHi-container */
 .sayHi-container {
-  padding: 20px 100px;
+  padding: 80px 100px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .sayHi-title-content {
@@ -10,8 +11,9 @@
 }
 
 .sayHi-container .sayHi-title {
-  font-size: 28px;
+  font-size: 38px;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .sayHi-container .sayHi-desc {
@@ -55,5 +57,5 @@
 
 .sayHi-container .sayHi-links .sayHi-link-menu:hover {
   color: #dfdfdf;
-  background-color: #333232;
+  background-color: #3f3e3e;
 }

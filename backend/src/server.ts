@@ -4,7 +4,6 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import videoRouter from "./routers/video.router";
-import userRouter from "./routers/user.router";
 import { dbConnect } from "./config/database.config";
 dbConnect();
 
@@ -18,7 +17,7 @@ app.use(
 );
 
 app.use("/api/videos", videoRouter);
-app.use("/api/users", userRouter);
+// app.use("/api/users", userRouter);
 
 const port = 5000;
 app.listen(port, () => {

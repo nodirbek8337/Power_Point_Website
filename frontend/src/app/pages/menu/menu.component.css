@@ -1,26 +1,128 @@
-.lessons-content{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
-.lessons-content .lesson-content a{
-    width: 220px;
-    background-color: #272626;
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    color: #dfdfdf;
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.lessons-content .lesson-content a img{
-    width: 100%;
-    height: 180px;
-    border-radius: 6px;
+.form-content {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.form-left-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.form-right-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-container input {
+  width: 340px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.textarea-content textarea {
+  width: 1100px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.video-number-input {
+  width: 98px;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+}
+
+.add-btn {
+  padding: 7px 26px;
+  font-size: 16px;
+  border: 2px solid #dfdfdf;
+  border-radius: 6px;
+  color: #dfdfdf;
+  background-color: green;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.remove-btn {
+  margin-top: 20px;
+  background-color: transparent;
+  padding: 7px 20px;
+  font-size: 16px;
+  width: 100%;
+  border: 2px solid #dfdfdf;
+  border-radius: 6px;
+  color: #dfdfdf;
+  transition: 0.5s;
+  background-color: rgb(197, 28, 28);
+  cursor: pointer;
+}
+
+/* lessons-content */
+.lessons-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.lesson-content {
+  width: 220px;
+  background-color: #272626;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.lessonn-containerr {
+  overflow: hidden;
+  height: 50px;
+}
+
+.lessons-content .lesson-content a {
+  color: #dfdfdf;
+}
+
+.lessons-content .lesson-content a img {
+  width: 100%;
+  height: 180px;
+  border-radius: 6px;
 }

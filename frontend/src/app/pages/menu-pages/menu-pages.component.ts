@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Video } from 'src/app/model/video';
-import { DatesService } from 'src/app/services/dates.service';
+import { VideoService } from 'src/app/services/video.service';
 
 @Component({
   selector: 'app-menu-pages',
@@ -9,30 +8,30 @@ import { DatesService } from 'src/app/services/dates.service';
   styleUrls: ['./menu-pages.component.css'],
 })
 export class MenuPagesComponent implements OnInit {
-  video!: Video;
-  videoDates: Video[] = [];
+  video: any = [];
+  videos: any[] = [];
 
   constructor(
-    private activateRoute: ActivatedRoute,
-    private videoDatesService: DatesService
+    private route: ActivatedRoute,
+    private videoService: VideoService
   ) {
-
-    activateRoute.params.subscribe((params) =>{
-      console.log(params);
-      
-    })
-
-    videoDatesService.getAll().subscribe((serverVideos) => {
-      this.videoDates = serverVideos;
-    });
-
-    activateRoute.params.subscribe((params) => {
+    route.params.subscribe((params) => {
       if (params['id']) {
-        videoDatesService.getVideoById(params['id']).subscribe((serverVideo) => {
-          this.video = serverVideo;
+        videoService.getVideoById(params['id']).subscribe((date) => {
+          this.video = date;
         });
       }
     });
+
+    videoService.getVideos().subscribe(
+      (data: any[]) => {
+        this.videos = data.sort((a, b) => a.videoNum - b.videoNum);
+      },
+      (error) => {
+        console.error("Ma'lumotlar so'rovida xatolik!!! : ", error);
+      }
+    );
   }
+
   ngOnInit(): void {}
 }

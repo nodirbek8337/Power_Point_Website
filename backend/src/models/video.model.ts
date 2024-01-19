@@ -2,26 +2,20 @@ import { Schema, model } from "mongoose";
 
 export interface Video {
   id: string;
+  videoNum: Number;
   imgUrl: string;
   videoUrl: string;
-  videoName: string;
-  videoDesc: string;
-  tutorialImg1: string;
-  tutorialImg2: string;
-  tutorialImg3: string;
-  tutorialImgDesc: string;
+  name: string;
+  description: string;
 }
 
 export const VideoSchema = new Schema<Video>(
   {
+    videoNum: { type: String, required: true },
     imgUrl: { type: String, required: true },
     videoUrl: { type: String, required: true },
-    videoName: { type: String, required: true },
-    videoDesc: { type: String, required: true },
-    tutorialImg1: { type: String, required: false },
-    tutorialImg2: { type: String, required: false },
-    tutorialImg3: { type: String, required: false },
-    tutorialImgDesc: { type: String, required: false },
+    name: { type: String, required: true },
+    description: { type: String, required: true },
   },
   {
     toJSON: {

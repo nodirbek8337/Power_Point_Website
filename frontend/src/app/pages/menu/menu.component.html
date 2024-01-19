@@ -1,14 +1,77 @@
+<div *ngIf="user" class="form-container">
+  <form (submit)="addVideo(form)" #form="ngForm" class="add-form">
+    <p class="form-title">Video darslik qo'shish</p>
+    <div class="form-content">
+      <div class="form-left-content">
+        <div class="input-container">
+          <div class="input-content">
+            <input
+              ngModel
+              type="text"
+              placeholder="Video image"
+              name="imgUrl"
+              required
+            />
+          </div>
+          <div class="input-content">
+            <input
+              ngModel
+              type="text"
+              placeholder="Video name"
+              name="name"
+              required
+            />
+          </div>
+          <div class="input-content">
+            <input
+              ngModel
+              type="text"
+              placeholder="Video url"
+              name="videoUrl"
+              required
+            />
+          </div>
+        </div>
+        <div class="textarea-content">
+          <textarea
+            ngModel
+            type="text"
+            placeholder="Video desc"
+            name="description"
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-right-content">
+        <input
+          ngModel
+          type="number"
+          class="video-number-input"
+          placeholder="video number"
+          name="videoNum"
+          required
+        />
+        <button type="submit" class="add-btn">Qo'shish</button>
+      </div>
+    </div>
+  </form>
+</div>
 <div class="menu-container">
   <div class="lessons-content">
-    <div *ngFor="let date of videoDates" class="lesson-content">
-      <a routerLink="/menu/{{ date.id }}">
-        <div class="img-content">
-          <img src="{{ date.imgUrl }}" />
-        </div>
-        <p class="lesson-title">
-          {{ date.videoName }}
-        </p>
-      </a>
+    <div *ngFor="let video of videos" class="lesson-content">
+      <form (ngSubmit)="deleteVideo(video.id)">
+        <a routerLink="/menu/{{ video.id }}">
+          <img src="{{ video.imgUrl }}" />
+          <div class="lessonn-containerr">
+            <p class="lesson-title">
+              {{ video.name }}
+            </p>
+          </div>
+        </a>
+        <button *ngIf="user" type="submit" class="remove-btn">
+          O'chirish
+        </button>
+      </form>
     </div>
   </div>
 </div>
